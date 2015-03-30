@@ -8,14 +8,24 @@
 
 import UIKit
 
+
+var _mapManager:BMKMapManager!
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,BMKGeneralDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        _mapManager = BMKMapManager();
+        var ret = _mapManager.start("Eyuw3i5lZDDGNulVknc7cvQb", generalDelegate: self)
+        
+        if (!ret) {
+            print("manager start failed!")
+        }
+        
         return true
     }
 
@@ -41,6 +51,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func onGetNetworkState(iError:Int){
+        if (0 == iError) {
+            println("联网成功")
+        }
+        else{
+            println("onGetNetworkState \(iError)")
+        }
+    }
+    
+    func onGetPermissionState(iError:Int){
+        if (0 == iError) {
+            println("授权成功")
+        }
+        else {
+            println("onGetPermissionState \(iError)")
+        }
+    }
+    
 
 }
 
