@@ -22,7 +22,7 @@ class OverlayView: UIView {
     @IBOutlet weak var label: UILabel!
     
     class func instanceFromNib() -> UIView {
-        return UINib(nibName: "Overlay", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as UIView
+        return UINib(nibName: "Overlay", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! UIView
     }
     
     

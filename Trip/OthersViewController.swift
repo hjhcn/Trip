@@ -47,7 +47,7 @@ class OthersViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("OtherCell", forIndexPath: indexPath)
-            as OtherCell
+            as! OtherCell
         
         let other = othersData[indexPath.row] as Other
         

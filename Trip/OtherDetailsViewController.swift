@@ -9,6 +9,5 @@
 import UIKit
 
 class OtherDetailsViewController: UITableViewController {
-
     @IBOutlet weak var nameTextField: UITextField!
 }
