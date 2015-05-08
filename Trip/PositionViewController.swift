@@ -7,21 +7,20 @@
 //
 
 import UIKit
-import MapKit
 
-class PositionViewController: UIViewController,MKMapViewDelegate {
+class PositionViewController: UIViewController,MAMapViewDelegate{
 
-    @IBOutlet var _mapView: MKMapView!
+    @IBOutlet var _mapView: MAMapView!
+    
+    var _location:CLLocationCoordinate2D!
     
     override func viewWillAppear(animated: Bool) {
-        _mapView.delegate = self
-        _mapView.centerCoordinate=CLLocationCoordinate2D(latitude: 39.920,longitude: 116.404)
-        //        self.navigationController?.navigationBarHidden = true
+        _mapView.centerCoordinate=_location
+        _mapView.zoomLevel=13
         
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        _mapView.delegate = nil
+        var annotation = MAPointAnnotation()
+        annotation.coordinate = _location
+        _mapView.addAnnotation(annotation)
     }
     
     override func viewDidLoad() {
@@ -35,15 +34,15 @@ class PositionViewController: UIViewController,MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func mapView(mapView: MAMapView!, viewForAnnotation annotation: MAAnnotation!) -> MAAnnotationView! {
+        let AnnotationViewID = "JDAnnotaionView";
+        var annotationView:MAPinAnnotationView! = mapView.dequeueReusableAnnotationViewWithIdentifier(AnnotationViewID) as! MAPinAnnotationView!
+        if annotationView == nil {
+            annotationView = MAPinAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
+            annotationView.animatesDrop = true
+        }
+        return annotationView
     }
-    */
 
 }

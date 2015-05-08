@@ -7,34 +7,25 @@
 //
 
 import UIKit
-import MapKit
 
-class GuideViewController: UIViewController,MKMapViewDelegate, UICollectionViewDelegate, UIScrollViewDelegate, NSObjectProtocol, UICollectionViewDataSource{
+class GuideViewController: UIViewController,MAMapViewDelegate, UICollectionViewDelegate, UIScrollViewDelegate, NSObjectProtocol, UICollectionViewDataSource{
     
-    @IBOutlet weak var _mapView: MKMapView!
+    @IBOutlet weak var _mapView: MAMapView!
     
     @IBOutlet weak var _collectionView: UICollectionView!
     
     var _isMapMode:Bool=true
     var _jd:JD?
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        _mapView.delegate = self
-        //        self.navigationController?.navigationBarHidden = true
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        _mapView.delegate = nil
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        var center=CLLocationCoordinate2D(latitude: 39.916,longitude: 116.397)
-        _mapView.region=MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.015, longitudeDelta: 0.015))
+        
+        _mapView.centerCoordinate=CLLocationCoordinate2D(latitude: 39.91608921,longitude: 116.39705658)
+        _mapView.zoomLevel=15.2
+        _mapView.delegate = self
+        
         for jd in DataSource().JDDatas {
-            var annotation = MKPointAnnotation()
+            var annotation = MAPointAnnotation()
             annotation.coordinate = jd.location
             annotation.title="\(jd.id)"
             _mapView.addAnnotation(annotation)
@@ -46,7 +37,7 @@ class GuideViewController: UIViewController,MKMapViewDelegate, UICollectionViewD
         // Dispose of any resources that can be recreated.
     }
     
-    func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
+    func mapView(mapView: MAMapView!, didSelectAnnotationView view: MAAnnotationView!) {
         println(NSDate().timeIntervalSince1970)
         _jd=DataSource().JDDatas[view.annotation.title!.toInt()!-1]
         self.performSegueWithIdentifier("guideToJD", sender: self)
@@ -54,11 +45,11 @@ class GuideViewController: UIViewController,MKMapViewDelegate, UICollectionViewD
         println(NSDate().timeIntervalSince1970)
     }
     
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    func mapView(mapView: MAMapView!, viewForAnnotation annotation: MAAnnotation!) -> MAAnnotationView! {
         let AnnotationViewID = "JDAnnotaionView";
-        var annotationView:PPAnnotationView! = mapView.dequeueReusableAnnotationViewWithIdentifier(AnnotationViewID) as! PPAnnotationView!
+        var annotationView:MAPPAnnotationView! = mapView.dequeueReusableAnnotationViewWithIdentifier(AnnotationViewID) as! MAPPAnnotationView!
         if annotationView == nil {
-            annotationView = PPAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
+            annotationView = MAPPAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
             var jd:JD=DataSource().JDDatas[annotation.title!.toInt()!-1]
             annotationView.setThumb(jd.picPath)
         }

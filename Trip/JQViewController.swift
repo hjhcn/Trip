@@ -27,22 +27,23 @@ class JQViewController: UIViewController,AACDelegate,UIAlertViewDelegate {
     
     var _audioCtler:AvAudioController!
     var _playBttonIndex:Int8=0
-    var _id:Int!
     var _jq:JQ!
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        println(NSDate().timeIntervalSince1970)
+    override func viewWillAppear(animated: Bool) {
+        
+        println("--viewWillAppear\(NSDate().timeIntervalSince1970)")
+        
+        self.navigationItem.title=_jq.name
         
         scrollView.contentSize.height = 700
+        
+        _coverImage.image=UIImage(named: _jq.picPath)
         
         _intro.layer.masksToBounds=true
         _intro.layer.cornerRadius=5.0
         
         _audioCtler=AvAudioController(resName: "gugong", type: "m4a")
         _audioCtler.setDelegate(self)
-        
-        _coverImage.image=UIImage(named: _jq.picPath)
         
         _phone.text=_jq.phone
         _position.text=_jq.address
@@ -61,28 +62,7 @@ class JQViewController: UIViewController,AACDelegate,UIAlertViewDelegate {
         _intro.attributedText = NSAttributedString(string: _jq.detailDesc, attributes: attributes as [NSObject : AnyObject])
         
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationItem.title=_jq.name
-    }
-    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     @IBAction func playAudio(sender: UIBarButtonItem) {
         _audioCtler.toggle()
@@ -120,10 +100,8 @@ class JQViewController: UIViewController,AACDelegate,UIAlertViewDelegate {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        var positionViewController:PositionViewController = segue.destinationViewController as PositionViewController;
-//        if positionViewController != nil {
-//            
-//        }
+        var positionViewController:PositionViewController = segue.destinationViewController as! PositionViewController;
+        positionViewController._location=_jq.location
     }
     
 }

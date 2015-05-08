@@ -33,7 +33,6 @@ class JDViewController: UIViewController,AACDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
         _audioCtler.stop()
@@ -69,7 +68,8 @@ class JDViewController: UIViewController,AACDelegate {
         _audioCtler = AvAudioController(resName:"gugong",type:"m4a")
         _audioCtler.setDelegate(self)
         _audioCtler.play()
-        CGRectMake(1, 1, 1, 1)
+        
+        println(NSDate().timeIntervalSince1970)
     }
     
     /*
@@ -100,6 +100,7 @@ class JDViewController: UIViewController,AACDelegate {
         case .Stop:
             "Stop"
         }
+        
     }
     
     func audioPlayingCallback(process: Float) {

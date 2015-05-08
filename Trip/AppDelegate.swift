@@ -9,9 +9,6 @@
 import UIKit
 import CoreData
 
-
-//var _mapManager:BMKMapManager!
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -22,14 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         MAMapServices.sharedServices().apiKey="6b24e7c6e62b328463258667187a10cb"
-        
-//        //baidu map
-//        _mapManager = BMKMapManager();
-//        var ret = _mapManager.start("Eyuw3i5lZDDGNulVknc7cvQb", generalDelegate: self)
-//        
-//        if (!ret) {
-//            print("manager start failed!")
-//        }
         
         
         
@@ -149,25 +138,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
-    func onGetNetworkState(iError:Int){
-        if (0 == iError) {
-            println("联网成功")
-        }
-        else{
-            println("onGetNetworkState \(iError)")
-        }
-    }
-    
-    func onGetPermissionState(iError:Int){
-        if (0 == iError) {
-            println("授权成功")
-        }
-        else {
-            println("onGetPermissionState \(iError)")
-        }
-    }
-    
 
 }
 

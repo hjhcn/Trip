@@ -7,34 +7,29 @@
 //
 
 import UIKit
-import MapKit
 
-class ServiceViewController: UIViewController,MKMapViewDelegate {
+class ServiceViewController: UIViewController,MAMapViewDelegate {
     
     var _fw:FW?
 
-    @IBOutlet weak var _mapView: MKMapView!
+    @IBOutlet weak var _mapView: MAMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        _mapView.delegate=self
-        var center=CLLocationCoordinate2D(latitude: 39.916,longitude: 116.397)
-        _mapView.region=MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.015, longitudeDelta: 0.015))
+        
+        _mapView.centerCoordinate=CLLocationCoordinate2D(latitude: 39.91608921,longitude: 116.39705658)
+        _mapView.zoomLevel=15.2
+        _mapView.delegate = self
+        
         for fw in DataSource().FWDatas {
-            var annotation = MKPointAnnotation()
+            var annotation = MAPointAnnotation()
             annotation.coordinate = fw.location
             annotation.title="\(fw.id)"
             _mapView.addAnnotation(annotation)
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    func mapView(mapView: MKMapView!, didSelectAnnotationView view: MKAnnotationView!) {
+    func mapView(mapView: MAMapView!, didSelectAnnotationView view: MAAnnotationView!) {
         println(NSDate().timeIntervalSince1970)
         _fw=DataSource().FWDatas[view.annotation.title!.toInt()!-1]
         self.performSegueWithIdentifier("serviceToFW", sender: self)
@@ -42,11 +37,11 @@ class ServiceViewController: UIViewController,MKMapViewDelegate {
         println(NSDate().timeIntervalSince1970)
     }
     
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    func mapView(mapView: MAMapView!, viewForAnnotation annotation: MAAnnotation!) -> MAAnnotationView! {
         let AnnotationViewID = "JDAnnotaionView";
-        var annotationView:PPAnnotationView! = mapView.dequeueReusableAnnotationViewWithIdentifier(AnnotationViewID) as! PPAnnotationView!
+        var annotationView:MAPPAnnotationView! = mapView.dequeueReusableAnnotationViewWithIdentifier(AnnotationViewID) as! MAPPAnnotationView!
         if annotationView == nil {
-            annotationView = PPAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
+            annotationView = MAPPAnnotationView(annotation: annotation, reuseIdentifier: AnnotationViewID)
             var fw:FW=DataSource().FWDatas[annotation.title!.toInt()!-1]
             annotationView.setThumb(fw.picPath)
         }

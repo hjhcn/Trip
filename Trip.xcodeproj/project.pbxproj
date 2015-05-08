@@ -18,7 +18,6 @@
 		810002B11AD669F000B64CFD /* CornerRadiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810002B01AD669F000B64CFD /* CornerRadiusView.swift */; };
 		810002E91AD75C0700B64CFD /* PositionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810002E81AD75C0700B64CFD /* PositionViewController.swift */; };
 		810002EE1AD7C70600B64CFD /* JDCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810002ED1AD7C70600B64CFD /* JDCollectionCell.swift */; };
-		815EC95B1ADA63EA00E10477 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 815EC95A1ADA63EA00E10477 /* MapKit.framework */; };
 		815EC95F1ADA69D200E10477 /* PPAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 815EC95E1ADA69D200E10477 /* PPAnnotationView.swift */; };
 		816263111ACA89C700FE340D /* JQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816263101ACA89C700FE340D /* JQViewController.swift */; };
 		8162631A1ACA938300FE340D /* bababa0.png in Resources */ = {isa = PBXBuildFile; fileRef = 816263121ACA938300FE340D /* bababa0.png */; };
@@ -35,6 +34,7 @@
 		81787DA01ADAC2660009E016 /* tam.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81787D9F1ADAC2660009E016 /* tam.jpg */; };
 		81A8015C1ACE366C00546312 /* TestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8015B1ACE366C00546312 /* TestEntity.swift */; };
 		81A8015E1ACE404E00546312 /* JQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8015D1ACE404E00546312 /* JQ.swift */; };
+		81ADFBC41ADCFBCC00C1C5CA /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81ADFBC31ADCFBCC00C1C5CA /* TestViewController.swift */; };
 		81B0CD311ADAD5A6009CD201 /* ServiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0CD301ADAD5A6009CD201 /* ServiceViewController.swift */; };
 		81B0CD331ADAD8D5009CD201 /* FWViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0CD321ADAD8D5009CD201 /* FWViewController.swift */; };
 		81B0CD351ADAD92A009CD201 /* FW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B0CD341ADAD92A009CD201 /* FW.swift */; };
@@ -108,7 +108,6 @@
 		810002B01AD669F000B64CFD /* CornerRadiusView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadiusView.swift; sourceTree = "<group>"; };
 		810002E81AD75C0700B64CFD /* PositionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PositionViewController.swift; sourceTree = "<group>"; };
 		810002ED1AD7C70600B64CFD /* JDCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JDCollectionCell.swift; sourceTree = "<group>"; };
-		815EC95A1ADA63EA00E10477 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		815EC95E1ADA69D200E10477 /* PPAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPAnnotationView.swift; sourceTree = "<group>"; };
 		816263101ACA89C700FE340D /* JQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQViewController.swift; sourceTree = "<group>"; };
 		816263121ACA938300FE340D /* bababa0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bababa0.png; sourceTree = "<group>"; };
@@ -125,6 +124,7 @@
 		81787D9F1ADAC2660009E016 /* tam.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tam.jpg; sourceTree = "<group>"; };
 		81A8015B1ACE366C00546312 /* TestEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEntity.swift; sourceTree = "<group>"; };
 		81A8015D1ACE404E00546312 /* JQ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JQ.swift; sourceTree = "<group>"; };
+		81ADFBC31ADCFBCC00C1C5CA /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		81B0CD301ADAD5A6009CD201 /* ServiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceViewController.swift; sourceTree = "<group>"; };
 		81B0CD321ADAD8D5009CD201 /* FWViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FWViewController.swift; sourceTree = "<group>"; };
 		81B0CD341ADAD92A009CD201 /* FW.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FW.swift; sourceTree = "<group>"; };
@@ -191,7 +191,6 @@
 				81B4BFA31ADBC4B800B056AA /* libstdc++.6.0.9.dylib in Frameworks */,
 				81B4BF9A1ADBC3FC00B056AA /* libz.dylib in Frameworks */,
 				81B4BF981ADBC3A700B056AA /* AMapSearchKit.framework in Frameworks */,
-				815EC95B1ADA63EA00E10477 /* MapKit.framework in Frameworks */,
 				81C9148C1AC2AC360015CA51 /* SystemConfiguration.framework in Frameworks */,
 				81B4BF931ADBBF3300B056AA /* MAMapKit.framework in Frameworks */,
 			);
@@ -309,6 +308,7 @@
 				81C914981AC30C7E0015CA51 /* OtherDetailsViewController.swift */,
 				81C914911AC2F9260015CA51 /* OthersViewController.swift */,
 				81B4BF941ADBC02600B056AA /* MAMapViewController.swift */,
+				81ADFBC31ADCFBCC00C1C5CA /* TestViewController.swift */,
 			);
 			name = c;
 			sourceTree = "<group>";
@@ -332,7 +332,6 @@
 				81B4BF991ADBC3FC00B056AA /* libz.dylib */,
 				81B4BF971ADBC3A700B056AA /* AMapSearchKit.framework */,
 				81B4BF921ADBBF3300B056AA /* MAMapKit.framework */,
-				815EC95A1ADA63EA00E10477 /* MapKit.framework */,
 				81C9148B1AC2AC360015CA51 /* SystemConfiguration.framework */,
 				81C914891AC2AC000015CA51 /* CoreLocation.framework */,
 			);
@@ -558,6 +557,7 @@
 				81C914951AC2FB7B0015CA51 /* Other.swift in Sources */,
 				810002EE1AD7C70600B64CFD /* JDCollectionCell.swift in Sources */,
 				816263291ACBE66300FE340D /* JDCollectionViewController.swift in Sources */,
+				81ADFBC41ADCFBCC00C1C5CA /* TestViewController.swift in Sources */,
 				81A8015E1ACE404E00546312 /* JQ.swift in Sources */,
 				81FF33401AC142260073D521 /* FindViewController.swift in Sources */,
 				81A8015C1ACE366C00546312 /* TestEntity.swift in Sources */,
