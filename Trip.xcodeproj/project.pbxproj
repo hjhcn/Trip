@@ -77,6 +77,7 @@
 		81EDC3B51AD0098000FB22E5 /* gode_play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81EDC3B11AD0098000FB22E5 /* gode_play@2x.png */; };
 		81EDC3B61AD0098000FB22E5 /* gode_stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 81EDC3B21AD0098000FB22E5 /* gode_stop.png */; };
 		81EDC3B71AD0098000FB22E5 /* gode_stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81EDC3B31AD0098000FB22E5 /* gode_stop@2x.png */; };
+		81F0C5FB1B0471640005E035 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 81F0C5FA1B0471640005E035 /* README.md */; };
 		81FF333E1AC142260073D521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF333D1AC142260073D521 /* AppDelegate.swift */; };
 		81FF33401AC142260073D521 /* FindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81FF333F1AC142260073D521 /* FindViewController.swift */; };
 		81FF33451AC142260073D521 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81FF33431AC142260073D521 /* Main.storyboard */; };
@@ -170,6 +171,7 @@
 		81EDC3B11AD0098000FB22E5 /* gode_play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gode_play@2x.png"; path = "res/gode_play@2x.png"; sourceTree = SOURCE_ROOT; };
 		81EDC3B21AD0098000FB22E5 /* gode_stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gode_stop.png; path = res/gode_stop.png; sourceTree = SOURCE_ROOT; };
 		81EDC3B31AD0098000FB22E5 /* gode_stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gode_stop@2x.png"; path = "res/gode_stop@2x.png"; sourceTree = SOURCE_ROOT; };
+		81F0C5FA1B0471640005E035 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		81FF33381AC142260073D521 /* Trip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81FF333C1AC142260073D521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81FF333D1AC142260073D521 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				81C914BE1ACA46A40015CA51 /* framework */,
 				81FF33521AC142270073D521 /* TripTests */,
 				81FF33391AC142260073D521 /* Products */,
+				81F0C5FA1B0471640005E035 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -551,6 +554,7 @@
 				810002B11AD669F000B64CFD /* CornerRadiusView.swift in Sources */,
 				81C914921AC2F9260015CA51 /* OthersViewController.swift in Sources */,
 				81B4BF951ADBC02600B056AA /* MAMapViewController.swift in Sources */,
+				81F0C5FB1B0471640005E035 /* README.md in Sources */,
 				81FF333E1AC142260073D521 /* AppDelegate.swift in Sources */,
 				81B4BFA71ADBC71400B056AA /* MAPPAnnotationView.swift in Sources */,
 				81B0CD351ADAD92A009CD201 /* FW.swift in Sources */,
